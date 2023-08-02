@@ -6,9 +6,9 @@ require("dotenv").config();
 mongoose.connect(process.env.DB_CONNECTION_STRING);
 
 async function deleteStudent(number){
-    Student.findOneAndDelete({ studentNumber: number }).then(function(){
-        return "Student deleted from database";
-    });
+    let deleteStudentRequest = await Student.findOneAndDelete({ studentNumber: number });
+    console.log("delete student request result " + deleteStudentRequest);
+    return deleteStudentRequest;
 }
 
 module.exports = deleteStudent;

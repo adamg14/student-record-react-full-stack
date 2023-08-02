@@ -14,7 +14,7 @@ async function addStudent(number, name, course){
         });
     
         newStudent.save().then(function(){
-            return "Student addded to the database";
+            return "Student record addded to the database";
         });
     } catch (error) {
         return "An error has occurred";   
